@@ -2,7 +2,8 @@
 Calls Manage System
 
 ## Packages
-'''shell
+```shell
 pip install Django
 pip install psycopg2
-'''
+pip install python-dotenv
+```

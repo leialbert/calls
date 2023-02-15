@@ -18,3 +18,10 @@ def api(request):
         re_log.save()
         
         return JsonResponse({'RewriteE164Rsp':my_data})
+    # else:
+    #     allprefix = Area.objects.all()
+    #     for obj in allprefix:
+    #         obj.area_city = obj.area_pro.split('-')[-1]
+    #         obj.area_pro = obj.area_pro.split('-')[0]
+    #         print('I am update the area %s' %obj.area_pro)
+    #         obj.save()

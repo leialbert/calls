@@ -8,7 +8,7 @@ class Log(models.Model):
         verbose_name_plural = "Logs"
 
     # {"RewriteE164Req":{"callId":123137,"callerE164":"020cuishou","calleeE164":"3313941135255"}}
-    call_type = models.CharField('请求类型',max_length=8)
+    call_type = models.CharField('请求类型',max_length=20)
     call_Id = models.IntegerField('呼叫ID')
     caller = models.CharField('主叫号码',max_length=20)
     callee = models.CharField('被叫号码',max_length=20)

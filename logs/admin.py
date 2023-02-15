@@ -8,6 +8,7 @@ class LogAdmin(admin.ModelAdmin):
     list_filter = (
         ('created_at', admin.DateFieldListFilter),
     )
+    # '%Y-%m-%d %H:%M:%S.%f'
     date_hierarchy = 'created_at'
     list_display = ['call_type','call_Id','caller','callee','created_at']
     list_per_page = 30

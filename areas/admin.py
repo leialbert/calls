@@ -7,4 +7,5 @@ class AreaAdmin(admin.ModelAdmin):
     search_fields = ['prefix','area_code','area_pro','area_city','mobile_carrier']
     list_filter = ['area_pro']
     list_display = ['prefix','area_code','area_pro','area_city','mobile_carrier']
+    ordering = ['area_code']
     list_per_page = 30

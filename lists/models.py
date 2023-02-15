@@ -14,6 +14,7 @@ class BlackPhone(models.Model):
     )
     level = models.IntegerField('级别',choices=levels)
     phone = models.CharField('号码',max_length=11)
+    created_at = models.DateTimeField('添加时间',auto_now_add=True)
 
 class WhitePhone(models.Model):
     class Meta:
@@ -28,3 +29,4 @@ class WhitePhone(models.Model):
     )
     level = models.IntegerField('级别',choices=levels)
     phone = models.CharField('号码',max_length=11)
+    created_at = models.DateTimeField('添加时间',auto_now_add=True)

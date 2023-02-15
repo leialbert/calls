@@ -5,8 +5,8 @@ from django.db import models
 class Area(models.Model):
 
     class Meta:
-        verbose_name = "Area"
-        verbose_name_plural = "Areas"
+        verbose_name = "地区前缀"
+        verbose_name_plural = "地区前缀"
 
     prefix = models.CharField('手机前缀', max_length=7)
     area_code = models.CharField('地区区号', max_length=4)

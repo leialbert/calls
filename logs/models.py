@@ -4,8 +4,8 @@ from django.db import models
 class Log(models.Model):
 
     class Meta:
-        verbose_name = "Log"
-        verbose_name_plural = "Logs"
+        verbose_name = "请求记录"
+        verbose_name_plural = "请求记录"
 
     # {"RewriteE164Req":{"callId":123137,"callerE164":"020cuishou","calleeE164":"3313941135255"}}
     call_type = models.CharField('请求类型',max_length=20)

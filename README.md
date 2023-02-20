@@ -6,4 +6,5 @@ Calls Manage System
 pip install Django
 pip install psycopg2
 pip install python-dotenv
+python manage.py collectstatic
 ```

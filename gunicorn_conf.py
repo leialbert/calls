@@ -1,8 +1,16 @@
-bind = "127.0.0.1:8000"
-workers = 3
-threads = 2
+bind = '127.0.0.1:8000'
+backlog = 2048
+workers = 1
+worker_class = 'sync'
+worker_connections = 1000
 timeout = 30
 keepalive = 2
-# errorlog = "/var/log/gunicorn/error.log"
-# accesslog = "/var/log/gunicorn/access.log"
-loglevel = "info"
+spew = False
+user = None
+group = None
+errorlog = '-'
+accesslog = '-'
+loglevel = 'info'
+access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
+proc_name = 'calls'
+

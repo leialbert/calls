@@ -23,7 +23,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-DEBUG = os.environ.get('DJANGO_DEBUG') == 'True'
+DEBUG = os.environ.get('DJANGO_DEBUG')
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 DB_NAME = os.environ.get('DB_NAME')
 DB_USER = os.environ.get('DB_USER')

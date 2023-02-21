@@ -18,6 +18,4 @@ class Rule(models.Model):
 
     name = models.CharField('规则名称',max_length=20)
     ip = models.ForeignKey(IPTable, verbose_name="IP地址", on_delete=models.CASCADE)
-    priority = models.IntegerField('优先级')
-    phone_group = models.ForeignKey('lists.Level', verbose_name='黑名单组',on_delete=models.CASCADE)
     callee_prefix = models.CharField('被叫前缀',max_length=10)

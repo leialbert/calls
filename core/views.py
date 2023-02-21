@@ -1,11 +1,22 @@
 from logs.models import Log
 from areas.models import Area
+from iptables.models import IPTable
 from django.http import JsonResponse
 import json
+from django.core.exceptions import PermissionDenied
+
+def require_specific_ips(view_func):
+    def wrapper(request, *args, **kwargs):
+        allowed_ips = IPTable.objects.all().values_list('ip_address',flat=True)      
+        if request.method == 'POST' and request.META.get('REMOTE_ADDR') not in allowed_ips:
+            raise PermissionDenied
+        return view_func(request, *args, **kwargs)
+    return wrapper
+
 
 re_log = Log()
 re_area = Area()
-
+@require_specific_ips
 def rewrite(request):
     if request.method == 'POST':
         request_body = request.body
@@ -25,6 +36,7 @@ def rewrite(request):
     #         obj.area_pro = obj.area_pro.split('-')[0]
     #         print('I am update the area %s' %obj.area_pro)
     #         obj.save()
+@require_specific_ips
 def vosblack(request):
     # def check():
     # post_param = request.get_data().decode()

@@ -13,4 +13,7 @@ class Log(models.Model):
     call_Id = models.IntegerField('呼叫ID')
     caller = models.CharField('主叫号码',max_length=20)
     callee = models.CharField('被叫号码',max_length=20)
+    area_pro = models.CharField('省份',max_length=10)
+    area_city = models.CharField('城市',max_length=10)
+    blackornot = models.BooleanField('是否黑名单',default=False)
     created_at = models.DateTimeField('请求时间',auto_now_add=True)

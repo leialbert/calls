@@ -5,6 +5,7 @@ from django.http import JsonResponse
 import json
 from django.core.exceptions import PermissionDenied
 
+# IP 白名单过滤
 def require_specific_ips(view_func):
     def wrapper(request, *args, **kwargs):
         allowed_ips = IPTable.objects.all().values_list('ip_address',flat=True)      
@@ -12,7 +13,6 @@ def require_specific_ips(view_func):
             raise PermissionDenied
         return view_func(request, *args, **kwargs)
     return wrapper
-
 
 re_log = Log()
 re_area = Area()

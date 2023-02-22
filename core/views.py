@@ -27,7 +27,7 @@ def rewrite(request):
         re_log.caller = my_data['callerE164']
         re_log.callee = my_data['calleeE164']
         re_log.save()
-        
+        print(my_data)
         return JsonResponse({'RewriteE164Rsp':my_data})
     # else:
     #     allprefix = Area.objects.all()

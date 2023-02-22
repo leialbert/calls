@@ -6,6 +6,7 @@ Calls Manage System
 pip install Django
 pip install psycopg2
 pip install python-dotenv
+pip install djangorestframework
 ```
 ## Deployment
 Gunicorn + Supervisor

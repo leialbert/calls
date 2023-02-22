@@ -37,6 +37,7 @@ ALLOWED_HOSTS = ['127.0.0.1','calls.leijingwei.com']
 # Application definition
 
 INSTALLED_APPS = [
+    "rest_framework",
     "users",
     "logs",
     "areas",

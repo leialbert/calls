@@ -4,6 +4,7 @@ from iptables.models import IPTable
 from django.http import JsonResponse
 import json
 from django.core.exceptions import PermissionDenied
+from django.shortcuts import render
 
 # IP 白名单过滤
 def require_specific_ips(view_func):
@@ -29,6 +30,9 @@ def rewrite(request):
         re_log.save()
         print(my_data)
         return JsonResponse({'RewriteE164Rsp':my_data})
+    else:
+        my_data = ['123']
+        return render(request, 'hello.html',my_data)
     # else:
     #     allprefix = Area.objects.all()
     #     for obj in allprefix:
